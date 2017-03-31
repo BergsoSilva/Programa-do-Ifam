@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Exercicio Utilizando jQuery + JSON</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <script src="jQuery.js"></script>
+	<script>
+
+     produto = JSON.stringify({
+        
+            nome: $("#nome").val();
+        });
+        
+ 
+     function adicionarProduto(){
+        
+     
+     produto = "";
+     if(!localStorage.getItem("carrinho")){	
+	//incluindo produto no carrinho (array)
+	produto = prompt("Informe o produto ou FIM:");
+	if(produto == "FIM") break;
+            listaProdutos = $.parseJSON(listaProdutos);
+        
+            produtos = "";
+            $.each(listaProdutos,function(indice,produto){
+            var nome = produto.nome;
+            produtos = produtos + nome + " <br> ";
+            
+        })while(produto != "FIM");
+        $("#lista").hmtl(produtos);
+     }
+ 
+     
+     function loadDocExternal(){
+        $.getJSON('arquivo_JSON.json',function(JSONDoc){
+            var produtos = "";
+            $.each(JSONDoc,function(indice,produto){
+                var nome = produto.nome;
+                produtos = produtos+nome+"<br>";
+            });
+            $("#lista").html(produtos);
+        });
+     }
+     </script>
+     </head>
+    <body>
+        <input type="button" value="Adicionar Produto ao Carrinho" id="btnAdicionar" />
+	<input type="button" value="Esvaziar Carrinho" id="btnExcluir" />
+    <br><br>
+	<div id="itensCarrinho"></div>
+	
+	<br><br><br>
+	
+	<div id="produtoJSON"></div>
+    
+    </body>
+    
+    
+    <script type="text/javascript">
+	
+	document.getElementById("btnAdicionar").addEventListener("click", adicionarProduto );
+	document.getElementById("btnExcluir").addEventListener("click", esvaziarCarrinho);
+
+	listarProdutos();
+
+    </script>
+</html>

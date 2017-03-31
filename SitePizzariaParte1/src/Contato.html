@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Contato</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+
+        <link href="css/estiloMenu.css" rel="stylesheet">
+
+    </head>
+
+    <body>
+        <iframe class="menuPrincipal" src="menuPrincipal.html"></iframe>
+
+        <h1>Fale Conosco</h1>
+
+        <form  class="formulario">
+            <fieldset style="width: 460px; height: 390px; background-color: whitesmoke;">
+                <legend>Dados do Cadastro</legend>
+                <br/>
+                <label for="nome" >Nome: </label>
+                <input type="text" name="nome" pattern ="[a-zA-Z]*" class="campo" placeholder="Digite seu Nome: " style="margin-left:5px;" size="30" required>
+                <br/><br/>
+                <label for="telefone" >Telefone: </label>
+                <input type="number" name="telefone" pattern="[0-9]{2}[0-9]{4,5}-[0-9]{4}" placeholder="00 0000-0000" style="margin-left:5px;" size="40" required>
+                <br/><br/>
+                <label for="email" style="margin-left:20px;">Email: </label>
+                <input type="email" name="email" placeholder="fulano@.com"  placeholder="Digite seu Email: " style="margin-left:20px;"size="30" required>
+                <br/><br/>
+                <label for="texto"style="margin-left:20px">Texto: </label>
+                <textarea rows ="10" cols="70" placeholder = "Digite a sua mensagem(Observações,criticas,elogios,comentários)"style="margin-left:20px" required></textarea>
+                <br/><br/>
+                <input type="reset" value="Limpar" id="botaoDestacado" style="margin-left: 80px;">
+
+                <input type="submit" value="Enviar" style="margin-left: 80px;">
+
+            </fieldset>    
+
+        </form>
+        <br><br><br>
+        <iframe class="FooterComIcons" src="frame/FooterComIcons.html"></iframe>    
+    </body>
+</html>
